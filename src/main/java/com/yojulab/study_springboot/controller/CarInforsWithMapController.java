@@ -59,6 +59,17 @@ public class CarInforsWithMapController {
         modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
         return modelAndView;
     }
+
+    @PostMapping("/updateAndSelect/{params}")
+    public ModelAndView updateAndSelect(@PathVariable String UNIQUE_ID
+                        , @RequestParam Map params, ModelAndView modelAndView) {
+        Object result = carInforsService.update(params);
+        modelAndView.addObject("params", params);
+        modelAndView.addObject("result", result);
+
+        modelAndView.setViewName("/WEB-INF/views/carinfor/list_map.jsp");
+        return modelAndView;
+    }
 }
 
 

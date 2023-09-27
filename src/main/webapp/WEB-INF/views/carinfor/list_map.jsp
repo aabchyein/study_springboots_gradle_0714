@@ -40,11 +40,13 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Year</th>
                                     <th>Car Name</th>
+                                    <th>Year</th>
                                     <th>ID</th>
                                     <th>Manufacturer ID</th>
                                     <th>Delete</th>
+                                    <th>update</th>
+                                    <th>insert</th>
                                 </tr>
                             </thead>
                             <tbody id="carTableBody">
@@ -67,6 +69,12 @@
                                         <td>
                                             <button formaction='/carInfor/map/deleteAndSelectSearch/<%= record.get("CAR_INFOR_ID") %>' formmethod="post">Del</button>
                                         </td>
+                                        <td>
+                                            <button formaction='/carInfor/map/updateAndSelect/' formmethod="post">update</button>
+                                        </td>
+                                        <td>
+                                            <button formaction='/carInfor/map/deleteAndSelectSearch/<%= record.get("CAR_INFOR_ID") %>' formmethod="post">insert</button>
+                                        </td>
                                     </tr>
                                     <% } %>
                                         <!-- Empty -->
@@ -80,7 +88,7 @@
                         <div>총 갯수 : <%= paginations.getTotalCount() %></div>
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="/carInfor/map/selectSearch?currentPage=<%= paginations.getPreviousPage() %>">Previous</a></li>
 
                                 <%
                                 for(int i=paginations.getBlockStart();i <= paginations.getBlockEnd(); i=i+1){

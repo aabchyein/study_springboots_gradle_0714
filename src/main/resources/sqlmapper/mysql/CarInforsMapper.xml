@@ -83,9 +83,9 @@
 
     <!-- 수정 -->
 	<update id="update" parameterType="Map">
-        update car_infors
-        set CAR_NAME = #{CAR_NAME}
-        where CAR_INFOR_ID = #{CAR_INFOR_ID}
+        UPDATE car_infors
+        SET CAR_NAME = #{CAR_NAME}
+        WHERE CAR_INFOR_ID = #{CAR_INFOR_ID};
     </update>
 
     <!-- 삭제 -->
